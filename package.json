@@ -1,0 +1,37 @@
+{
+  "name": "sloth-js",
+  "version": "0.0.5",
+  "description": "Sloth.js is a small lib created to make simple manipulations on a dataset, mostly structure arrays of objects into key-value objects.",
+  "main": "./distribution/index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "jest",
+    "build": "babel src --presets babel-preset-es2015 --out-dir distribution"
+  },
+  "author": "Isaque Dias <isaquediasm@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "deep-equal": "^1.0.1",
+    "dotenv": "^4.0.0",
+    "jest": "^20.0.4",
+    "uglifyjs-webpack-plugin": "^1.1.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.5",
+    "babel-polyfill": "^6.23.0",
+    "babel-runtime": "^6.25.0",
+    "fs": "0.0.1-security",
+    "jest-cli": "^20.0.4"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  }
+}
