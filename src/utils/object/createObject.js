@@ -1,7 +1,8 @@
 /**
  * Create a key based object
  *
- * @param {string} key - the key to create the object
+ * @param {string} key
+ * c - the key to create the object
  * @param {any} props
  */
 

@@ -5,15 +5,13 @@ export const properties = [
     rating: 3,
     properties: [
       { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
-      { name: 'Cozy Apartment', neighborhood: 'Mitte' }
+      { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
     ]
   },
   {
     id: '2',
     name: 'User 2',
-    rating: 3,
-    properties: [
-      { name: 'Single Room', neighborhood: 'Lichtenberg' }
-    ]
+    rating: 2,
+    properties: [{ name: 'Single Room', neighborhood: 'Lichtenberg' }]
   }
-]
+];
