@@ -2,56 +2,131 @@
 
 A modern javascript library that empowers native Array's functionality with extra methods that everyone loves.
 
-```javascript
-import sloth from 'sloth';
-
-const arr = sloth([]);
-const arr = sloth([], { whitelist: ['group'] });
-const arr = sloth([], { blacklist: ['group'] });
-
-arr.group('rating');
-arr.group('properties', 'neighborhood');
-arr.toSet();
-```
-
 ### .group
 
 ```javascript
-const players = sloth([
+import sloth from 'sloth';
+
+const properties = sloth([
   {
-    name: 'Ronaldinho',
-    stars: 5
+    id: '1',
+    name: 'User 1',
+    rating: 3,
+    properties: [
+      { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
+      { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
+    ]
   },
   {
-    name: 'Neymar',
-    stars: 5
+    id: '2',
+    name: 'User 2',
+    rating: 2,
+    properties: [{ name: 'Single Room', neighborhood: 'Lichtenberg' }]
   },
   {
-    name: 'David Luiz',
-    stars: 4
+    id: '3',
+    name: 'User 3',
+    rating: 2,
+    properties: [{ name: 'Single Room', neighborhood: 'Mitte' }]
   }
 ]);
 
-players.group('stars');
+players.group('rating');
 
 /*
-output: 
-
-{
-  5: [
+=> {
+  3: [
     {
-      name: 'Ronaldinho',
-      stars: 5
-    },
-    {
-      name: 'Neymar',
-      stars: 5
+      id: '1',
+      name: 'User 1',
+      rating: 3,
+      properties: [
+        { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
+        { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
+      ]
     }
   ],
-  4: [
+  2: [
     {
-      name: 'David Luiz',
-      stars: 4
+      id: '2',
+      name: 'User 2',
+      rating: 2,
+      properties: [{ name: 'Single Room', neighborhood: 'Mitte' }]
+    },
+    {
+      id: '3',
+      name: 'User 3',
+      rating: 2,
+      properties: [{ name: 'Single Room', neighborhood: 'Mitte' }]
+    }
+  ]
+}
+
+*/
+```
+
+### .group (by children)
+
+```javascript
+import sloth from 'sloth';
+
+const properties = sloth([
+  {
+    id: '1',
+    name: 'User 1',
+    rating: 3,
+    properties: [
+      { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
+      { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
+    ]
+  },
+  {
+    id: '2',
+    name: 'User 2',
+    rating: 2,
+    properties: [{ name: 'Single Room', neighborhood: 'Mitte' }]
+  },
+  {
+    id: '3',
+    name: 'User 3',
+    rating: 2,
+    properties: [{ name: 'Single Room', neighborhood: 'Mitte' }]
+  }
+]);
+
+players.group('properties', 'neighborhood');
+
+/*
+=> {
+  'Friderichshain': [
+    { 
+      name: 'Duplex Flat', 
+      neighborhood: 'Friderichshain', 
+      parent: { 
+        id: '1',
+        name: 'User 1',
+        rating: 3
+      }
+    }
+  ],
+  'Mitte': [
+    {
+      name: 'Single Room',
+      neighborhood: 'Mitte'
+      parent: {
+        id: '2',
+        name: 'User 2',
+        rating: 2
+      }
+    },
+    {
+      name: 'Single Room',
+      neighborhood: 'Mitte'
+      parent: {
+        id: '3',
+        name: 'User 3',
+        rating: 2
+      }
     }
   ]
 }
@@ -60,6 +135,52 @@ output:
 ```
 
 ### .toMap
+
+```javascript
+import sloth from 'sloth';
+
+const properties = sloth([
+  {
+    id: '1',
+    name: 'User 1',
+    rating: 3,
+    properties: [
+      { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
+      { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
+    ]
+  },
+  {
+    id: '2',
+    name: 'User 2',
+    rating: 2,
+    properties: [{ name: 'Single Room', neighborhood: 'Lichtenberg' }]
+  }
+]);
+
+properties.toMap('id');
+
+/*
+output: 
+{
+  1: {
+    id: '1',
+    name: 'User 1',
+    rating: 3,
+    properties: [
+      { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
+      { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
+    ]
+  },
+  2: {
+    id: '2',
+    name: 'User 2',
+    rating: 2,
+    properties: [{ name: 'Single Room', neighborhood: 'Lichtenberg' }]
+  }
+};
+
+*/
+```
 
 ### .removeDuplicates
 
