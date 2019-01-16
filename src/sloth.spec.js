@@ -1,8 +1,12 @@
 import sloth from './sloth';
 import { properties } from './__mocks__/dataset';
 
-test('should', () => {
-  const parsed = sloth(properties);
+test('should throw error when the first argument is not an array', () => {
+  const instance = () => sloth('string');
+  expect(instance).toThrowError();
+});
 
-  console.log(parsed.group('properties', 'neighborhood'));
+test('should throw error when the second argument (options) is not an object', () => {
+  const instance = () => sloth(properties, 'string');
+  expect(instance).toThrowError();
 });

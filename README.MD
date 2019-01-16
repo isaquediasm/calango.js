@@ -2,6 +2,16 @@
 
 A modern javascript library that empowers native Array's functionality with extra methods that everyone loves.
 
+### .value
+
+Simply retrieve the array
+
+```javascript
+const arr = [1, 2, 3];
+const instance = sloth(arr);
+instance.value(); // [1, 2, 3]
+```
+
 ### .group
 
 ```javascript
