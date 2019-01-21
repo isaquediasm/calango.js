@@ -1,4 +1,4 @@
-# [WORK IN PROGRESS] sloth.js
+# [WIP] sloth.js
 
 A modern javascript library that empowers native Array's functionality with extra methods that everyone loves.
 
