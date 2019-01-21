@@ -1,31 +1,19 @@
-import group from './lib/group';
-import toMap from './lib/toMap';
+import { getMethods } from './lib/methods';
+import validate from './helpers/validate';
+/**
+ *
+ *
+ * @param {*} [arr=[]]
+ * @param {*} [config={}]
+ * @returns
+ */
+function sloth(arr, config) {
+  validate.expectArray(arr);
+  !!config && validate.expectObject(config);
 
-const methods = {
-  group,
-  toMap
-};
-
-function sloth(arr = [], config = {}) {
-  if (!Array.isArray(arr)) {
-    throw new Error(
-      `Sloth expected an array as first argument and ${typeof arr} was received instead`
-    );
-  }
-
-  if (typeof config !== 'object') {
-    throw new Error(
-      `Sloth expected an object as second argument and ${typeof arr} was received instead`
-    );
-  }
-
-  const self = arr;
-  const prototype = self.__proto__;
-
-  prototype.group = group(arr);
-  prototype.toMap = toMap(arr);
-
-  return self;
+  const methods = {};
+  Object.defineProperties(methods, getMethods(arr, config));
+  return methods;
 }
 
 export default sloth;

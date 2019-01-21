@@ -3,6 +3,9 @@ import { properties } from './__mocks__/dataset';
 
 test('should throw error when the first argument is not an array', () => {
   const instance = () => sloth('string');
+  console.log(sloth([]));
+  console.log(sloth([], { whitelist: ['value'] }));
+  console.log(sloth([], { blacklist: ['group'] }));
   expect(instance).toThrowError();
 });
 
