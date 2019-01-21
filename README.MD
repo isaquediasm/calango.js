@@ -2,9 +2,15 @@
 
 A modern javascript library that empowers native Array's functionality with extra methods that everyone loves.
 
+## Installing
+
+This library is available via NPM module:
+
+`npm install sloth`
+
 ## Methods
 
-### `value`
+### `.value`
 
 Simply retrieve the array
 
@@ -14,7 +20,7 @@ const instance = sloth(arr);
 instance.value(); // [1, 2, 3]
 ```
 
-### `group(prop)`
+### `.group(prop)`
 
 ```javascript
 import sloth from 'sloth';
