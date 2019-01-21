@@ -2,7 +2,9 @@
 
 A modern javascript library that empowers native Array's functionality with extra methods that everyone loves.
 
-### .value
+## Methods
+
+### `value`
 
 Simply retrieve the array
 
@@ -12,7 +14,7 @@ const instance = sloth(arr);
 instance.value(); // [1, 2, 3]
 ```
 
-### .group
+### `group(prop)`
 
 ```javascript
 import sloth from 'sloth';
@@ -75,7 +77,7 @@ players.group('rating');
 */
 ```
 
-### .group (by children)
+### `group(prop, childProp) (by children)`
 
 ```javascript
 import sloth from 'sloth';
@@ -191,9 +193,3 @@ output:
 
 */
 ```
-
-### .removeDuplicates
-
-### .clean
-
-Removes all extra methods from array's proptype
