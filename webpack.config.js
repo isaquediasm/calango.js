@@ -35,7 +35,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   context: __dirname + '/src', // `__dirname` is root of project and `src` is source
   entry: {
-    app: './lib/groupByProp.js'
+    app: './sloth.js'
   },
   output: {
     path: __dirname + '/dist', // `dist` is the destination
@@ -49,12 +49,9 @@ module.exports = {
       {
         test: /\.js$/, // Check for all js files
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: { presets: ['es2015'] }
-          }
-        ]
+        use: {
+          loader: 'babel-loader'
+        }
       }
     ]
   }
