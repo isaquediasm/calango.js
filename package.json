@@ -7,7 +7,8 @@
     "start": "webpack-dev-server",
     "lint": "eslint src",
     "test": "jest",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "prepublish": "npm run lint && npm run test && npm run build"
   },
   "author": "Isaque Dias <isaquediasm@gmail.com>",
   "license": "MIT",
