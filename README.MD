@@ -8,7 +8,15 @@ This library is available via NPM module:
 
 `npm install sloth`
 
-## Methods
+## API
+
+### `sloth(arr, config)`
+
+#### Arguments:
+  - `arr` (Array): 
+  - `config` (Object): 
+    - `whitelist` (Array):
+    - `blacklist` (Array):
 
 ### `.value`
 
