@@ -2,21 +2,24 @@
 
 A modern javascript library that empowers native Array's functionality with extra methods that everyone loves.
 
-## Installing
+## Usage
 
-This library is available via NPM module:
+First, install the `sloth` module:
+`npm install sloth --save`
 
-`npm install sloth`
+or install with yarn
+`yarn add sloth`
 
 ## API
 
 ### `sloth(arr, config)`
 
 #### Arguments:
-  - `arr` (Array): 
-  - `config` (Object): 
-    - `whitelist` (Array):
-    - `blacklist` (Array):
+
+- `arr` (Array):
+- `config` (Object):
+  - `whitelist` (Array):
+  - `blacklist` (Array):
 
 ### `.value`
 
@@ -207,3 +210,11 @@ output:
 
 */
 ```
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
