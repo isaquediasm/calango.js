@@ -2,7 +2,7 @@
   "name": "sloth-js",
   "version": "0.0.8",
   "description": "Sloth.js is a small lib created to make simple manipulations on a dataset, mostly structure arrays of objects into key-value objects.",
-  "main": "./dist/sloth.js",
+  "main": "dist/sloth.js",
   "scripts": {
     "start": "webpack-dev-server",
     "test": "jest",
