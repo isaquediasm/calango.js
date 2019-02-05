@@ -1,11 +1,10 @@
 {
   "name": "sloth-js",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "Sloth.js is a small lib created to make simple manipulations on a dataset, mostly structure arrays of objects into key-value objects.",
   "main": "./dist/sloth.js",
   "scripts": {
     "start": "webpack-dev-server",
-
     "test": "jest",
     "build": "webpack --mode production",
     "prepublish": "npm run test && npm run build"
@@ -26,7 +25,6 @@
     "babel-loader": "^8.0.5",
     "deep-equal": "^1.0.1",
     "dotenv": "^4.0.0",
-
     "fs": "0.0.1-security",
     "jest": "^24.0.0",
     "jest-cli": "^24.0.0",
