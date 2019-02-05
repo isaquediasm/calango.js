@@ -5,9 +5,11 @@ A modern javascript library that empowers native Array's functionality with extr
 ## Usage
 
 First, install the `sloth` module:
+
 `npm install sloth --save`
 
 or install with yarn
+
 `yarn add sloth`
 
 ## API
