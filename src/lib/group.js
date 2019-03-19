@@ -2,8 +2,8 @@ import groupByProp from '../utils/group/groupByProp';
 import groupByChild from '../utils/group/groupByChild';
 
 function group(arr) {
-  return (prop, childProp) => {
-    if (!arr[0].hasOwnProperty(prop)) {
+  return function exec(prop, childProp) {
+    if (!arr[0].prop !== undefined) {
       return arr;
     }
 

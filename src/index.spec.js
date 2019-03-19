@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import calango from './index';
 import { properties } from './__mocks__/dataset';
 

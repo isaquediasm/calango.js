@@ -9,10 +9,9 @@ import validate from './helpers/validate';
  */
 function calango(arr, config) {
   validate.expectArray(arr);
-  !!config && validate.expectObject(config);
+  if (config) validate.expectObject(config);
 
   const methods = {};
-
   Object.defineProperties(methods, getMethods(arr, config));
   return methods;
 }
