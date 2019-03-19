@@ -1,4 +1,4 @@
-# [WIP] sloth.js [![Build Status](https://travis-ci.org/isaquediasm/sloth.js.svg?branch=master)](https://travis-ci.org/isaquediasm/sloth.js)
+# calango.js [![Build Status](https://travis-ci.org/isaquediasm/calango.js.svg?branch=master)](https://travis-ci.org/isaquediasm/calango.js)
 
 A modern javascript library that empowers native Array's functionality with extra methods that everyone loves.
 
