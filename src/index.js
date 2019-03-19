@@ -7,7 +7,7 @@ import validate from './helpers/validate';
  * @param {*} [config={}]
  * @returns
  */
-function sloth(arr, config) {
+function calango(arr, config) {
   validate.expectArray(arr);
   !!config && validate.expectObject(config);
 
@@ -17,4 +17,4 @@ function sloth(arr, config) {
   return methods;
 }
 
-export default sloth;
+export default calango;

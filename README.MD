@@ -1,27 +1,33 @@
 # calango.js [![Build Status](https://travis-ci.org/isaquediasm/calango.js.svg?branch=master)](https://travis-ci.org/isaquediasm/calango.js)
 
-A modern javascript library that empowers native Array's functionality with extra methods that everyone loves.
+A modern javascript library that empowers native Array's functionality with helpers that facilitates data structure manipulations.
+
+## Motivation
+
+Even though there are a couple of nice libraries for data manipulation for javascript, such as lodash, I've decided to go simple and build a small and compact lib with the functionalities I use the most in my daily routine.
 
 ## Usage
 
-First, install the `sloth` module:
+First, install the `calango` module:
 
-`npm install sloth --save`
+`npm install calango --save`
 
 or install with yarn
 
-`yarn add sloth`
+`yarn add calango`
 
 ## API
 
-### `sloth(arr, config)`
+### `calango(arr, config)`
+
+Initalizes the object
 
 #### Arguments:
 
-- `arr` (Array):
+- `arr` (Array): the array to be mutated
 - `config` (Object):
-  - `whitelist` (Array):
-  - `blacklist` (Array):
+  - `whitelist` (Array): define which methods you want to be available
+  - `blacklist` (Array): remove one or many specific methods from the object.
 
 ### `.value`
 
@@ -29,16 +35,16 @@ Simply retrieve the array
 
 ```javascript
 const arr = [1, 2, 3];
-const instance = sloth(arr);
+const instance = calango(arr);
 instance.value(); // [1, 2, 3]
 ```
 
 ### `.group(prop)`
 
 ```javascript
-import sloth from 'sloth';
+import calango from 'calango';
 
-const properties = sloth([
+const properties = calango([
   {
     id: '1',
     name: 'User 1',
@@ -99,9 +105,9 @@ players.group('rating');
 ### `group(prop, childProp) (by children)`
 
 ```javascript
-import sloth from 'sloth';
+import calango from 'calango';
 
-const properties = sloth([
+const properties = calango([
   {
     id: '1',
     name: 'User 1',
@@ -168,9 +174,9 @@ players.group('properties', 'neighborhood');
 ### .toMap
 
 ```javascript
-import sloth from 'sloth';
+import calango from 'calango';
 
-const properties = sloth([
+const properties = calango([
   {
     id: '1',
     name: 'User 1',

@@ -9,7 +9,7 @@ export default {
   expectObject(prop) {
     if (typeof prop !== 'object') {
       throw new TypeError(
-        `Sloth expected an object as second argument and ${typeof prop} was received instead`
+        `Calango expected an object as second argument and ${typeof prop} was received instead`
       );
     }
   }
