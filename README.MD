@@ -4,7 +4,7 @@ A modern javascript library that empowers native Array's functionality with help
 
 ## Motivation
 
-Even though there are a couple of nice libraries for data manipulation for javascript, such as lodash, I've decided to go simple and build a small and compact lib with the functionalities I use the most in my daily routine.
+Even though there are a couple of nice libraries for data manipulation in javascript, such as lodash, I've decided to go simple and build a small and compact lib with the functionalities I use the most in my daily routine.
 
 ## Usage
 
