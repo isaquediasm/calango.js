@@ -23,11 +23,11 @@ const methods = arr => ({
 function filterBasedOnList(config) {
   const { whitelist = [], blacklist = [] } = config;
 
-  if (!!whitelist.length) {
+  if (whitelist.length) {
     return method => whitelist.includes(method);
   }
 
-  if (!!blacklist.length) {
+  if (blacklist.length) {
     return method => !blacklist.includes(method);
   }
 

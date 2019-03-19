@@ -1,15 +1,12 @@
-import sloth from './sloth';
+import calango from './index';
 import { properties } from './__mocks__/dataset';
 
 test('should throw error when the first argument is not an array', () => {
-  const instance = () => sloth('string');
-  console.log(sloth([]));
-  console.log(sloth([], { whitelist: ['value'] }));
-  console.log(sloth([], { blacklist: ['group'] }));
+  const instance = () => calango('string');
   expect(instance).toThrowError();
 });
 
 test('should throw error when the second argument (options) is not an object', () => {
-  const instance = () => sloth(properties, 'string');
+  const instance = () => calango(properties, 'string');
   expect(instance).toThrowError();
 });

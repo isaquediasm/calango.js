@@ -1,12 +1,12 @@
 {
-  "name": "sloth-js",
-  "version": "0.0.8",
-  "description": "Sloth.js is a small lib created to make simple manipulations on a dataset, mostly structure arrays of objects into key-value objects.",
-  "main": "dist/sloth.js",
+  "name": "calango",
+  "version": "0.0.9",
+  "description": "Calango.js is a small lib created to make simple manipulations on a dataset, mostly structure arrays of objects into key-value objects.",
+  "main": "./lib/calango.js",
   "scripts": {
     "start": "webpack-dev-server",
     "test": "jest",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.prod.js",
     "prepublish": "npm run test && npm run build"
   },
   "author": "Isaque Dias <isaquediasm@gmail.com>",
@@ -22,13 +22,18 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "compression-webpack-plugin": "^2.0.0",
     "deep-equal": "^1.0.1",
     "dotenv": "^4.0.0",
+    "eslint": "^5.14.1",
+    "eslint-loader": "^2.1.2",
     "fs": "0.0.1-security",
     "jest": "^24.0.0",
     "jest-cli": "^24.0.0",
-    "uglifyjs-webpack-plugin": "^1.1.1",
+    "js-config-webpack-plugin": "^1.3.1",
+    "uglifyjs-webpack-plugin": "^1.3.0",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": ">=3.1.11"

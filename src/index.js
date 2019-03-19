@@ -12,6 +12,7 @@ function sloth(arr, config) {
   !!config && validate.expectObject(config);
 
   const methods = {};
+
   Object.defineProperties(methods, getMethods(arr, config));
   return methods;
 }

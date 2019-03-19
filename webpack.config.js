@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+const JsConfigWebpackPlugin = require('js-config-webpack-plugin');
+
 /* module.exports = {
   entry: [
     'babel-polyfill',
@@ -33,10 +35,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
  */
 
 module.exports = {
-  context: __dirname + '/src', // `__dirname` is root of project and `src` is source
-  entry: {
-    app: './sloth.js'
-  },
+  mode: 'production',
+  entry: './src/index.js',
+
   output: {
     path: __dirname + '/dist', // `dist` is the destination
     filename: 'sloth.js'
@@ -49,9 +50,20 @@ module.exports = {
       {
         test: /\.js$/, // Check for all js files
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: [
+          // run process in multiple threads
+          require.resolve('thread-loader'),
+          {
+            loader: require.resolve('babel-loader'),
+            options: {
+              // cache builds, future builds attempt to read from cache to avoid needing to run expensive babel processings
+              cacheDirectory: true,
+              // do not include superfluous whitespace characters and line terminators
+              // https://babeljs.io/docs/en/babel-core/#options
+              compact: true
+            }
+          }
+        ]
       }
     ]
   }
