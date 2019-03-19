@@ -39,7 +39,59 @@ const instance = calango(arr);
 instance.value(); // [1, 2, 3]
 ```
 
+### .toMap
+
+Transforms an array of objects into a key:value object, based on the passed property.
+
+```javascript
+import calango from 'calango';
+
+const properties = calango([
+  {
+    id: '1',
+    name: 'User 1',
+    rating: 3,
+    properties: [
+      { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
+      { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
+    ]
+  },
+  {
+    id: '2',
+    name: 'User 2',
+    rating: 2,
+    properties: [{ name: 'Single Room', neighborhood: 'Lichtenberg' }]
+  }
+]);
+
+properties.toMap('id');
+
+/*
+output: 
+{
+  1: {
+    id: '1',
+    name: 'User 1',
+    rating: 3,
+    properties: [
+      { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
+      { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
+    ]
+  },
+  2: {
+    id: '2',
+    name: 'User 2',
+    rating: 2,
+    properties: [{ name: 'Single Room', neighborhood: 'Lichtenberg' }]
+  }
+};
+
+*/
+```
+
 ### `.group(prop)`
+
+Groups objects with the same value for a given property
 
 ```javascript
 import calango from 'calango';
@@ -104,6 +156,8 @@ players.group('rating');
 
 ### `group(prop, childProp) (by children)`
 
+Groups objects with the same value for a given child property
+
 ```javascript
 import calango from 'calango';
 
@@ -167,54 +221,6 @@ players.group('properties', 'neighborhood');
     }
   ]
 }
-
-*/
-```
-
-### .toMap
-
-```javascript
-import calango from 'calango';
-
-const properties = calango([
-  {
-    id: '1',
-    name: 'User 1',
-    rating: 3,
-    properties: [
-      { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
-      { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
-    ]
-  },
-  {
-    id: '2',
-    name: 'User 2',
-    rating: 2,
-    properties: [{ name: 'Single Room', neighborhood: 'Lichtenberg' }]
-  }
-]);
-
-properties.toMap('id');
-
-/*
-output: 
-{
-  1: {
-    id: '1',
-    name: 'User 1',
-    rating: 3,
-    properties: [
-      { name: 'Duplex Flat', neighborhood: 'Friderichshain' },
-      { name: 'Cozy Apartment', neighborhood: 'Friderichshain' }
-    ]
-  },
-  2: {
-    id: '2',
-    name: 'User 2',
-    rating: 2,
-    properties: [{ name: 'Single Room', neighborhood: 'Lichtenberg' }]
-  }
-};
 
 */
 ```
