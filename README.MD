@@ -198,6 +198,15 @@ players.group('properties', 'neighborhood');
         name: 'User 1',
         rating: 3
       }
+    },
+    { 
+      name: 'Cozy Apartment',
+      neighborhood: 'Friderichshain',
+      parent: { 
+        id: '1',
+        name: 'User 1',
+        rating: 3
+      }
     }
   ],
   'Mitte': [

@@ -1,6 +1,6 @@
 {
   "name": "calango",
-  "version": "0.0.11",
+  "version": "1.0.0",
   "description": "Calango.js is a small lib created to make simple manipulations on a dataset, mostly structure arrays of objects into key-value objects.",
   "main": "./lib/calango.js",
   "scripts": {
