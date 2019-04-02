@@ -46,7 +46,7 @@ Transforms an array of objects into a key:value object, based on the passed prop
 ```javascript
 import calango from 'calango';
 
-const properties = calango([
+const houses = calango([
   {
     id: '1',
     name: 'User 1',
@@ -64,7 +64,7 @@ const properties = calango([
   }
 ]);
 
-properties.toMap('id');
+houses.toMap('id');
 
 /*
 output: 
@@ -96,7 +96,7 @@ Groups objects with the same value for a given property
 ```javascript
 import calango from 'calango';
 
-const properties = calango([
+const houses = calango([
   {
     id: '1',
     name: 'User 1',
@@ -120,7 +120,7 @@ const properties = calango([
   }
 ]);
 
-players.group('rating');
+houses.group('rating');
 
 /*
 => {
@@ -161,7 +161,7 @@ Groups objects with the same value for a given child property
 ```javascript
 import calango from 'calango';
 
-const properties = calango([
+const houses = calango([
   {
     id: '1',
     name: 'User 1',
@@ -185,7 +185,7 @@ const properties = calango([
   }
 ]);
 
-players.group('properties', 'neighborhood');
+houses.group('properties', 'neighborhood');
 
 /*
 => {
