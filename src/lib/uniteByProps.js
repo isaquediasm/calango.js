@@ -28,32 +28,3 @@ export default function uniteByProps(arr) {
     );
   };
 }
-
-/* x
-calango([]).uniteByProperties([], { prod: val => val })
-
-calango([]).uniteByProperty({
-  rank: (val) => val * val,
-  prod: val => val
-})
-
-calango([]).uniteByProperty([], {
-  rank: (val) => val * val,
-  kv: (val, obj) => val * val,
-})
-
-//v1
-calango([]).uniteByProperties()
-calango([]).uniteByProperties([])
-calango([]).uniteByProperties([], { prod: val => val })
-//v2
-calango([]).uniteByProperties()
-calango([]).uniteByProperties({ 
-  include: []
-}
-calango([]).uniteByProperties({ 
-  include: [],
-  transform: [prod: val => val] 
-}
-
- */
