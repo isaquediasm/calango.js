@@ -1,8 +1,10 @@
 import group from './group';
 import toMap from './toMap';
 import arrayToObject from '../utils/array/arrayToObject';
+import limit from './limit';
+import uniteByProps from './uniteByProps';
 
-const methods = arr => ({
+export const methods = arr => ({
   value: {
     value: arr,
     writable: false,
@@ -15,6 +17,16 @@ const methods = arr => ({
   },
   toMap: {
     value: toMap(arr),
+    writable: false,
+    enumerable: true
+  },
+  limit: {
+    value: limit(arr),
+    writable: false,
+    enumerable: true
+  },
+  uniteByProps: {
+    value: uniteByProps(arr),
     writable: false,
     enumerable: true
   }
@@ -34,7 +46,7 @@ function filterBasedOnList(config) {
   return Boolean;
 }
 
-function getMethods(arr = [], config = {}, methodsList = methods(arr)) {
+export function getMethods(arr = [], config = {}, methodsList = methods(arr)) {
   if (!config.whitelist && !config.blacklist) return methodsList;
 
   return arrayToObject(
@@ -42,5 +54,3 @@ function getMethods(arr = [], config = {}, methodsList = methods(arr)) {
     key => ({ [key]: methodsList[key] })
   );
 }
-
-export { getMethods, methods };
