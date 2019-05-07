@@ -24,6 +24,11 @@ Initalizes the object
 
 #### Arguments:
 
+| Argument | Type   | Description           |
+| -------- | ------ | --------------------- |
+| arr      | Array  | List of objects       |
+| config   | Object | Set of configurations |
+
 - `arr` (Array): the array to be mutated
 - `config` (Object):
   - `whitelist` (Array): define which methods you want to be available
