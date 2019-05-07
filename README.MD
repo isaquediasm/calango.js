@@ -9,9 +9,11 @@ Many applications have to deal with data that is structured in a nested or relat
 ## Installing
 
 First, install the `calango` module:
+
 `npm install calango --save`
 
 or install with yarn
+
 `yarn add calango`
 
 ## Usage
