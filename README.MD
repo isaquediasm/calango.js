@@ -4,7 +4,7 @@
 
 ## Motivation
 
-Many applications have to deal with data that os structured in a nested or relational shape, which leads many time to unnecessary filtering in order to perform mutations, duplicates in several places, etc. Normalizing the data into a hash map, making it look like a database, will prevent us from looping through each element in order to find a specific object.
+Many applications have to deal with data that is structured in a nested or relational shape, which leads many times to unnecessary filtering in order to perform mutations and duplicates in several places. Normalizing the data into a hash map, making it look like a database, will prevent us from looping through each element in order to find a specific object.
 
 ## Installing
 
@@ -37,11 +37,11 @@ const instance = calango(arr);
 instance.value(); // [1, 2, 3]
 ```
 
-### `.toMap`
+### `.toMap(prop)`
 
 Transforms an array of objects into a key:value object, based on the passed property.
 
-#### Arguments:
+##### Arguments:
 
 - `prop` (String): property that will be used as key for the normalization.
 
