@@ -1,22 +1,20 @@
-# calango.js [![Build Status](https://travis-ci.org/isaquediasm/calango.js.svg?branch=master)](https://travis-ci.org/isaquediasm/calango.js)
+# Calango.js [![Build Status](https://travis-ci.org/isaquediasm/calango.js.svg?branch=master)](https://travis-ci.org/isaquediasm/calango.js)
 
-> A modern javascript library that empowers native Array's functionality with helpers that facilitates data structure manipulations.
+> A modern javascript library that empowers native Array's functionality with helpers that facilitates data structure normalizations.
 
 ## Motivation
 
-Even though there are a couple of nice libraries for data manipulation in javascript, such as lodash, I've decided to go simple and build a small and compact lib with the functionalities I use the most in my daily routine.
+Many applications have to deal with data that os structured in a nested or relational shape, which leads many time to unnecessary filtering in order to perform mutations, duplicates in several places, etc. Normalizing the data into a hash map, making it look like a database, will prevent us from looping through each element in order to find a specific object.
 
-## Usage
+## Installing
 
 First, install the `calango` module:
-
 `npm install calango --save`
 
 or install with yarn
-
 `yarn add calango`
 
-## API
+## Usage
 
 ### `calango(arr, config)`
 
