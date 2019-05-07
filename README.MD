@@ -1,6 +1,6 @@
 # calango.js [![Build Status](https://travis-ci.org/isaquediasm/calango.js.svg?branch=master)](https://travis-ci.org/isaquediasm/calango.js)
 
-A modern javascript library that empowers native Array's functionality with helpers that facilitates data structure manipulations.
+> A modern javascript library that empowers native Array's functionality with helpers that facilitates data structure manipulations.
 
 ## Motivation
 
@@ -24,11 +24,6 @@ Initalizes the object
 
 #### Arguments:
 
-| Argument | Type   | Description           |
-| -------- | ------ | --------------------- |
-| arr      | Array  | List of objects       |
-| config   | Object | Set of configurations |
-
 - `arr` (Array): the array to be mutated
 - `config` (Object):
   - `whitelist` (Array): define which methods you want to be available
@@ -47,6 +42,10 @@ instance.value(); // [1, 2, 3]
 ### `.toMap`
 
 Transforms an array of objects into a key:value object, based on the passed property.
+
+#### Arguments:
+
+- `prop` (String): property that will be used as key for the normalization.
 
 ```javascript
 import calango from 'calango';
