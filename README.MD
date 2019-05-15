@@ -29,6 +29,79 @@ Initalizes the object
   - `whitelist` (Array): define which methods you want to be available
   - `blacklist` (Array): remove one or many specific methods from the object.
 
+### `.normalize`
+
+```javascript
+import { calango, createSchema } from 'calango'
+
+const posts = calango([
+    {
+      id: '1',
+      content: 'Here it comes a nice post',
+      author: { id: '4', name: 'Nathan' },
+      comments: [
+        { id: '1', comment: 'Nice', author: { id: '3', name: 'Isaque' } },
+        { id: '2', comment: 'Horrible', author: { id: '1', name: 'Oleg' } },
+        {
+          id: '3',
+          comment: 'I think thats bullshit',
+          author: { id: '2', name: 'Fernando' }
+        }
+      ],
+      likes: [{ id: '3', name: 'Isaque' }, { id: '1', name: 'Oleg' }]
+    },
+    {
+      id: '2',
+      content: 'Here it comes another nice post',
+      author: { id: '3', name: 'Isaque' },
+      comments: [
+        { id: '1', comment: 'Nice', author: { id: '2', name: 'Fernando' } }
+      ],
+      likes: [{ id: '3', name: 'Isaque' }, { id: '1', name: 'Oleg' }]
+    }
+  ])
+
+posts.normalize(data => {
+  const users = createEntity('users')
+
+  const comments = createEntity('comments', (fields) => ({
+    ...fields,
+    author: createReference(fields.author, 'id')
+  }))
+
+  const posts = createEntity('posts', fields => ({
+    content: fields.content,
+    comments: createReference(fields.comments),
+    likes: createReference(fields.likes)
+  }))
+
+  return {
+    users,
+    comments,
+    posts
+  }
+
+  return {
+    flats,
+    comments,
+    users
+  }
+})
+
+
+
+
+houses.schema({
+  flats: ('flatId', (fields) => fields)
+  users:
+  comments: {
+    id: 'commenntId', N
+    user:
+  }
+})
+houses.normalize({ flats: (flat) => flat.id,  })
+```
+
 ### `.value`
 
 Simply retrieve the array

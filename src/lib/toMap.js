@@ -8,7 +8,12 @@ import createObject from '../utils/object/createObject';
  * @param {string} key The property to be used as key
  */
 function toMap(arr) {
-  return key => arrayToObject(arr, item => createObject(item[key], item));
+  const data = Array.isArray(arr[0])
+    ? arr.reduce((acc, curr) => [...acc, ...curr], [])
+    : arr;
+
+  return (key = 'id', formatter = a => a) =>
+    arrayToObject(data, item => createObject(item[key], formatter(item)));
 }
 
 export default toMap;
