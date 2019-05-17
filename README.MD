@@ -61,31 +61,22 @@ const posts = calango([
     }
   ])
 
-posts.normalize(data => {
-  const users = createEntity('users')
+posts.normalize((data) => {
+  const users = createEntity(data.author)
 
-  const comments = createEntity('comments', (fields) => ({
+  const comments = createEntity(data.comments, (fields) => ({
     ...fields,
-    author: createReference(fields.author, 'id')
+    author: createReference(fields.author, users)
   }))
 
-  const posts = createEntity('posts', fields => ({
+  const posts = createSchema('posts', fields => ({
     content: fields.content,
+    author: createReference(fields.author),
     comments: createReference(fields.comments),
     likes: createReference(fields.likes)
   }))
 
-  return {
-    users,
-    comments,
-    posts
-  }
-
-  return {
-    flats,
-    comments,
-    users
-  }
+  return normalize(data, posts)
 })
 
 
