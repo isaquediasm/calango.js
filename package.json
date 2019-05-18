@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test": "jest",
-    "build": "webpack --config webpack.prod.js",
+    "build": "babel src -d build-es --ignore src/**/*.spec.js src/__mocks__/*.*",
+    "build-webpack": "webpack --config webpack.prod.js",
     "prepublish": "npm run test && npm run build"
   },
   "author": "Isaque Dias <isaquediasm@gmail.com>",
@@ -20,10 +21,16 @@
     "functional"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.1.5",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-plugin-macros": "^2.4.2",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "copy-webpack-plugin": "^5.0.3",
     "deep-equal": "^1.0.1",
     "dotenv": "^4.0.0",
     "eslint": "5.3.0",
@@ -41,5 +48,8 @@
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": ">=3.1.11"
   },
-  "repository": "https://github.com/isaquediasm/calango.js"
+  "repository": "https://github.com/isaquediasm/calango.js",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4"
+  }
 }

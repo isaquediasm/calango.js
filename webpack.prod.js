@@ -2,7 +2,7 @@
 const path = require('path');
 const env = require('yargs').argv.env; // use --env with webpack 2
 const pkg = require('./package.json');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 let libraryName = pkg.name;
 
 let outputFile, mode;
@@ -19,9 +19,18 @@ const config = {
   mode: mode,
   entry: __dirname + '/src/index.js',
   devtool: 'inline-source-map',
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, './src'),
+        to: 'lib/[name].[ext]',
+        toType: 'template'
+      }
+    ])
+  ],
   output: {
     path: __dirname + '/lib',
-    filename: outputFile,
+    filename: '[path]/[name].[hash].js',
     library: libraryName,
     libraryTarget: 'umd',
     umdNamedDefine: true,
