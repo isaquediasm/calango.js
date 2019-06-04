@@ -1,3 +1,5 @@
+import { normalize, createEntity } from 'calango';
+
 const posts = [
   {
     id: '1',
@@ -24,3 +26,5 @@ const posts = [
     likes: [{ id: '3', name: 'Isaque' }, { id: '1', name: 'Oleg' }]
   }
 ];
+
+normalize(posts, data => {});
